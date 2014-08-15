@@ -1,5 +1,3 @@
-//http://www.html5rocks.com/en/tutorials/getusermedia/intro/
-
 var video = document.getElementById('video');
 
 navigator.getUserMedia  = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
@@ -25,6 +23,13 @@ var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 var x;
 var y;
+var currentdate = new Date();
+var datetime = currentdate.getDate() + "-"
+                + (currentdate.getMonth()+1)  + "-"
+                + currentdate.getFullYear() + "-"
+                + currentdate.getHours() + "-"
+                + currentdate.getMinutes() + "-"
+                + currentdate.getSeconds();
 
  function snapshot() {
 	btnSnapshot.style.display = 'none';
@@ -34,6 +39,8 @@ var y;
 	canvas.height = video.videoHeight;
 	ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 	video.style.display = 'none';
+	linkSave.href = canvas.toDataURL('image/jpeg');
+	linkSave.download = datetime + '.jpg';
 	return false;//use preventdefault
 }
 
@@ -42,4 +49,5 @@ function redo(){
 	btnRedo.style.display = 'none';
 	canvas.style.display = 'none';
 	video.style.display = 'block';
+	return false;//use preventdefault
 }
