@@ -58,6 +58,9 @@
         <h1 class="header-heading">WebUtils Camera</h1>
         <a href="https://github.com/wayferer/webutils-camera/issues" class="pullRight reportbug" target="_blank"><span class="octicon mega-octicon octicon-bug"></span></a>
       </header>
+      <input type="file" accept="image/*" onchange="picChange(event)"/>
+      <canvas id="capturedPhoto" width="200" height="200">
+      </canvas>
     </div>
 
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
