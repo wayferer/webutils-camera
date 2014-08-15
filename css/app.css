@@ -74,11 +74,12 @@ canvas{
   position: absolute;
   bottom:0;
 }
-.btn_take{
+.btn_take,
+.btn_redo{
   left:50%;
 }
 .btn_redo{
-  right: 0px;
+  display: none;
 }
 .btn_save{
   left: 0px;

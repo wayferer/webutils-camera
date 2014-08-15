@@ -15,6 +15,7 @@ if (navigator.getUserMedia) {
 }
 
 document.getElementById('btnSnapshot').onclick = snapshot;
+document.getElementById('btnRedo').onclick = redo;
 
 var btnSnapshot = document.getElementById('btnSnapshot');
 var btnRedo = document.getElementById('btnRedo');
@@ -34,4 +35,11 @@ var y;
 	ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 	video.style.display = 'none';
 	return false;//use preventdefault
+}
+
+function redo(){
+	btnSnapshot.style.display = 'block';
+	btnRedo.style.display = 'none';
+	canvas.style.display = 'none';
+	video.style.display = 'block';
 }
