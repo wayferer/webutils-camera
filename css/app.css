@@ -84,3 +84,8 @@ canvas{
 .btn_save{
   left: 0px;
 }
+.sourcesVideo{
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
