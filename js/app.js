@@ -57,7 +57,7 @@ function gotSources(sourceInfos) {
 		var option = document.createElement("option");
 		option.value = sourceInfo.id;
 		if (sourceInfo.kind === 'video') {
-			option.text = sourceInfo.label;
+			option.text = sourceInfo.label || 'camera ' + (videoSelect.length + 1);
 			sourcesVideo.appendChild(option);
 		} else {
 
