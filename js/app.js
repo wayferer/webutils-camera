@@ -58,7 +58,7 @@ function gotSources(sourceInfos) {
 		option.value = sourceInfo.id;
 		if (sourceInfo.kind === 'video') {
 			//option.text = sourceInfo.label;
-			option.text = 'camera'+sourceInfo.facing;
+			option.text = 'camera facing: '+sourceInfo.facing;
 			sourcesVideo.appendChild(option);
 		} else {
 
