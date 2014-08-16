@@ -14,13 +14,6 @@ var canvasElement = document.getElementById('canvas');
 var ctx = canvasElement.getContext('2d');
 var x;
 var y;
-var currentdate = new Date();
-var datetime = currentdate.getDate() + "-"
-				+ (currentdate.getMonth()+1)  + "-"
-				+ currentdate.getFullYear() + "-"
-				+ currentdate.getHours() + "-"
-				+ currentdate.getMinutes() + "-"
-				+ currentdate.getSeconds();
 
 navigator.getUserMedia  = (navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia);
 
@@ -32,6 +25,13 @@ function snapshot() {
 	canvasElement.height = videoElement.videoHeight;
 	ctx.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
 	videoElement.style.display = 'none';
+	var currentdate = new Date();
+	var datetime = currentdate.getDate() + "-"
+				+ (currentdate.getMonth()+1)  + "-"
+				+ currentdate.getFullYear() + "-"
+				+ currentdate.getHours() + "-"
+				+ currentdate.getMinutes() + "-"
+				+ currentdate.getSeconds();
 	linkSave.href = canvasElement.toDataURL('image/jpeg');
 	linkSave.download = datetime + '.jpg';
 	return false;//use preventdefault
