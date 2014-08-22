@@ -13,14 +13,17 @@ a:active{
   color: #colour;
   text-decoration: none;
 }*/
-
-.pullRight{
-  float: right;
+button:focus{
+  outline:none;
 }
-.pullLeft{
-  float: left;
+html,body{
+  background-color: #f5f5f5;
 }
-
+*,*:before,*:after{
+  -moz-box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+  box-sizing:border-box;
+}
 .clearfix:before,
 .clearfix:after{
   display: table;
@@ -29,63 +32,106 @@ a:active{
 .clearfix:after{
   clear: both;
 }
-
-/* This is the CSS for the "standard" container and header, feel free to remove/change */
 .container{
   width: 800px;
   max-width: 100%;
-  margin: 0 auto 30px;
+  margin: 0 auto;
 }
-
 .header{
-  padding: 0 10px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 45px;
+  text-align: center;
+  height: 50px;
+  padding:0 10px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #f5f5f5;
+  z-index: 2;
+  /*transform: translateY(-90px);
+  transition: transform 0.4s ease-out;*/
+  transform: translateY(0px);
+  transition: transform 0.4s ease-out;
 }
+.header.hide{
+  transform: translateY(-50px);
+  transition: transform 0.6s ease-out;
+}
+/*.header.show{
+  transform: translateY(0px);
+  transition: transform 0.4s ease-out;
+}*/
+.btn_showHeader{
+  font-size: 20px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  transition: all 0.5s ease-out;
+}
+.btn_hideHeader{
+  /*position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 1;*/
+  transform: translateY(50px) rotate(180deg);
+  transition: all 0.5s ease-out;
+}
+/*.btn_hideHeader.show{
+  transform: translateY(-90px);
+  transition: transform 0.4s ease-out;
+}*/
 .header-heading,
-.header-launcherIcon{
+.header-launcherIcon,
+.reportbug{
   vertical-align: middle;
   display: inline-block;
 }
+.header-launcherIcon{
+}
 .header-heading{
   font-size: 20px;
-  line-height: 54px;
-}
-.header-launcherIcon{
-  height: 70px;
-  margin-right: 20px;
+  margin:0 20px;
 }
 .reportbug{
-  margin-top: 25px;
+  /*margin-top: 25px;*/
 }
 /*@media (max-width: 400px){
 }*/
 video,
 canvas{
   position: absolute;
-  top: 70px;
-  right: 0px;
-  left: 0px;
-  bottom:0px;
+  top: 0;
+  left: 0;
 }
 canvas{
   display: none;
 }
 .btn{
+  vertical-align: middle;
+  display: inline-block;
   position: absolute;
-  bottom:0;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color:transparent;
 }
 .btn_take,
 .btn_redo{
   left:50%;
+  bottom:0;
 }
 .btn_redo{
   display: none;
 }
 .btn_save{
   left: 0px;
+  bottom:0;
 }
 .sourcesVideo{
+  width: 50px;
   position: absolute;
-  top: 0;
-  left: 50%;
+  right: 0;
+  bottom: 0;
 }

@@ -41,28 +41,26 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content=""/>
 
-    <!-- Google Fonts if you need -->
-    <!--<link href="https://fonts.googleapis.com/css?family=" rel="stylesheet" type="text/css">-->
-
     <link rel="stylesheet" href="css/normalize.min.css">
-    <link rel="stylesheet" href="css/octicons/octicons.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
 
-    <!-- This is the "standard" header and container, feel free to disregard it though -->
     <div class="container">
-      <header class="header clearfix">
-        <img src="img/icon/196.png" alt="launcher icon" class="header-launcherIcon">
+      <header class="header js-header"><!-- show_header -->
+        <span class="header-launcherIcon fa fa-camera"></span>
         <h1 class="header-heading">WebUtils Camera</h1>
-        <a href="https://github.com/wayferer/webutils-camera/issues" class="pullRight reportbug" target="_blank"><span class="octicon mega-octicon octicon-bug"></span></a>
+        <a href="https://github.com/wayferer/webutils-camera/issues" class="reportbug" target="_blank"><span class="fa fa-bug"></span></a>
       </header>
+      <button class="btn btn_showHeader js-btn_showHeader"><span class="fa fa-chevron-down"></span></button>
+      <!-- <button class="btn btn_hideHeader js-btn_hideHeader"><span class="fa fa-chevron-up"></span></button> -->
       <video id="video" autoplay></video>
       <canvas id="canvas"></canvas>
-      <button id="btnSnapshot" class="btn btn_take">Take Photo</button>
-      <button id="btnRedo" class="btn btn_redo">Redo Photo</button>
-      <a href="#" id="linkSave" class="btn btn_save">Save</a>
+      <button id="btnSnapshot" class="btn btn_take"><span class="fa fa-dot-circle-o"></span></button>
+      <button id="btnRedo" class="btn btn_redo"><span class="fa fa-repeat"></span></button>
+      <a href="#" id="linkSave" class="btn btn_save"><span class="fa fa-save"></span></a>
       <select id="sourcesVideo" class="sourcesVideo"></select>
     </div>
 

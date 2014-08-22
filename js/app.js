@@ -87,3 +87,13 @@ function showCameraFeed(){
 	navigator.getUserMedia(constraints, successCallback, errorCallback);
 }
 showCameraFeed();
+
+//hide header
+setTimeout(function() {
+	zToggleClass(zQ('.js-header'),'hide');
+}, 2000)
+zBindEvent(zQ('.js-btn_showHeader'),"click",function(){
+	zToggleClass(zQ('.js-header'),'hide');
+	zToggleClass(zQ('.js-btn_showHeader'),'btn_hideHeader');
+	zToggleClass(zQ('.js-btn_showHeader'),'js-btn_hideHeader');
+})
