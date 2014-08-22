@@ -3,14 +3,17 @@
 */
 function zQ(selector){return document.querySelector(selector);}
 function zQA(selector){return document.querySelectorAll(selector);}
-function zAddClass(el,className){
-  if(!((' '+el.className+' ').indexOf(' '+className+' ')>-1)){el.className+=' '+className;}
-}
-function zHasClass(el,className){
-  if((' '+el.className+' ').indexOf(' '+className+' ')>-1){return true;}
-  else{return false;}
-}
+function zAddClass(el,className){if(!((' '+el.className+' ').indexOf(' '+className+' ')>-1)){el.className+=' '+className;}}
+function zHasClass(el,className){return new RegExp(' '+className+' ').test(' '+el.className+' ');}
 function zRemoveClass(el,className){el.className=el.className.replace(' '+className, '').replace(className, '');}
+function zToggleClass(el,className){
+  var newClass=' '+el.className.replace(/[\t\r\n]/g," ")+' ';
+  if(zHasClass(el,className)){
+    while(newClass.indexOf(" "+className+" ")>=0){newClass=newClass.replace(" "+className+" "," ");}
+    el.className=newClass.replace(/^\s+|\s+$/g,'');
+  }
+  else{el.className+=' '+className;}
+}
 function zBindEvent(el,eventName,eventHandler){
   if(el.addEventListener){el.addEventListener(eventName,eventHandler,false);}
   else if(el.attachEvent){el.attachEvent('on'+eventName,eventHandler);}
