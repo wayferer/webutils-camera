@@ -59,7 +59,7 @@ function gotSources(sourceInfos) {
 		option.value = sourceInfo.id;
 		if (sourceInfo.kind === 'video') {
 			//option.text = sourceInfo.label;
-			option.text = 'camera facing: '+sourceInfo.facing;
+			option.text = /*'camera facing: '+*/sourceInfo.facing+' facing';
 			sourcesVideo.appendChild(option);
 		} else {
 
@@ -70,6 +70,11 @@ function successCallback(stream) {
 	window.stream = stream;
 	videoElement.src = window.URL.createObjectURL(stream);
 	videoElement.play();
+	/*setTimeout(function() {
+		videoElement.height=window.innerHeight;
+		videoElement.width=window.innerWidth;
+		alert(window.innerHeight+' '+videoElement.videoHeight)
+	},1000)*/
 }
 function errorCallback(error){
 	console.log("navigator.getUserMedia error: ", error);

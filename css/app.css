@@ -1,20 +1,7 @@
-/* If you want a custom font */
-/*body{
-  font-family: 'FontName', sans-serif;
-}*/
-
-/* If you want to customise link colours */
-/*a{
-  color: #colour;
-}
-a:focus,
-a:hover,
-a:active{
-  color: #colour;
-  text-decoration: none;
-}*/
-button:focus{
+button:focus,select:focus{
   outline:none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 html,body{
   background-color: #000;
@@ -94,8 +81,6 @@ html,body{
 .reportbug{
   color: #000;
 }
-/*@media (max-width: 400px){
-}*/
 video,
 canvas{
   position: absolute;
@@ -115,8 +100,6 @@ canvas{
   margin-left: -25px;
   left:50%;
   bottom:7px;
-  border-radius: 50%;
-  /*background-color: rgba(255,255,255,0.2);*/
 }
 .btn_redo,
 .btn_save{
@@ -127,12 +110,15 @@ canvas{
   padding:2px 7px;
   left: 10px;
   bottom:10px;
-  border-radius: 5px;
-  /*background-color: rgba(255,255,255,0.2);*/
 }
 .sourcesVideo{
-  width: 50px;
+  font-size: 12px;
+  text-transform: capitalize;
+  height: 34px;
   position: absolute;
+  top: 10px;
   right: 10px;
-  bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f5f5f5;
 }

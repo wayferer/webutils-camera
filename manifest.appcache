@@ -3,6 +3,12 @@ CACHE MANIFEST
 
 CACHE:
 #index.html
+#css/app.css
+#css/normalize.min.css
+#img/icon/
+#js/app.js
+#js/plugins.js
+#//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css
 
 NETWORK:
 *
