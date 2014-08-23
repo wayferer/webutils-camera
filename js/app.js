@@ -20,6 +20,7 @@ navigator.getUserMedia  = (navigator.getUserMedia || navigator.webkitGetUserMedi
 function snapshot() {
 	btnSnapshot.style.display = 'none';
 	btnRedo.style.display = 'block';
+	linkSave.style.display = 'block';
 	canvasElement.style.display = 'block';
 	canvasElement.width = videoElement.videoWidth;
 	canvasElement.height = videoElement.videoHeight;
@@ -71,7 +72,7 @@ function successCallback(stream) {
 	videoElement.play();
 }
 function errorCallback(error){
-  console.log("navigator.getUserMedia error: ", error);
+	console.log("navigator.getUserMedia error: ", error);
 }
 function showCameraFeed(){
 	if (!!window.stream) {

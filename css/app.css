@@ -17,7 +17,7 @@ button:focus{
   outline:none;
 }
 html,body{
-  background-color: #f5f5f5;
+  background-color: #000;
 }
 *,*:before,*:after{
   -moz-box-sizing:border-box;
@@ -37,6 +37,16 @@ html,body{
   max-width: 100%;
   margin: 0 auto;
 }
+.btn{
+  color: #f5f5f5;
+  vertical-align: middle;
+  display: inline-block;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color:transparent;
+}
 .header{
   font-size: 20px;
   line-height: 45px;
@@ -49,8 +59,6 @@ html,body{
   left: 0;
   background-color: #f5f5f5;
   z-index: 2;
-  /*transform: translateY(-90px);
-  transition: transform 0.4s ease-out;*/
   transform: translateY(0px);
   transition: transform 0.4s ease-out;
 }
@@ -58,12 +66,9 @@ html,body{
   transform: translateY(-50px);
   transition: transform 0.6s ease-out;
 }
-/*.header.show{
-  transform: translateY(0px);
-  transition: transform 0.4s ease-out;
-}*/
 .btn_showHeader{
   font-size: 20px;
+  margin-left: -10px;
   position: fixed;
   top: 0;
   left: 50%;
@@ -71,17 +76,9 @@ html,body{
   transition: all 0.5s ease-out;
 }
 .btn_hideHeader{
-  /*position: fixed;
-  top: 0;
-  left: 50%;
-  z-index: 1;*/
   transform: translateY(50px) rotate(180deg);
   transition: all 0.5s ease-out;
 }
-/*.btn_hideHeader.show{
-  transform: translateY(-90px);
-  transition: transform 0.4s ease-out;
-}*/
 .header-heading,
 .header-launcherIcon,
 .reportbug{
@@ -95,7 +92,7 @@ html,body{
   margin:0 20px;
 }
 .reportbug{
-  /*margin-top: 25px;*/
+  color: #000;
 }
 /*@media (max-width: 400px){
 }*/
@@ -108,30 +105,34 @@ canvas{
 canvas{
   display: none;
 }
-.btn{
-  vertical-align: middle;
-  display: inline-block;
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  border: none;
-  background-color:transparent;
-}
 .btn_take,
 .btn_redo{
+  font-size: 40px;
+  line-height: 51px;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  margin-left: -25px;
   left:50%;
-  bottom:0;
+  bottom:7px;
+  border-radius: 50%;
+  /*background-color: rgba(255,255,255,0.2);*/
 }
-.btn_redo{
+.btn_redo,
+.btn_save{
   display: none;
 }
 .btn_save{
-  left: 0px;
-  bottom:0;
+  font-size: 30px;
+  padding:2px 7px;
+  left: 10px;
+  bottom:10px;
+  border-radius: 5px;
+  /*background-color: rgba(255,255,255,0.2);*/
 }
 .sourcesVideo{
   width: 50px;
   position: absolute;
-  right: 0;
-  bottom: 0;
+  right: 10px;
+  bottom: 10px;
 }
