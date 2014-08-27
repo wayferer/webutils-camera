@@ -9,7 +9,7 @@ A simple camera for web and mobile web, as per the [WebUtils](https://github.com
 * ~~ability to switch cameras~~
 * ~~running on github pages~~
 * ~~make it look prettier~~
+* ~~add analytics~~
 * fix video size issue
 * add icons
 * ability to share photo
-* add analytics
