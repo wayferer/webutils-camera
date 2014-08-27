@@ -35,6 +35,7 @@ function snapshot() {
 				+ currentdate.getSeconds();
 	linkSave.href = canvasElement.toDataURL('image/jpeg');
 	linkSave.download = datetime + '.jpg';
+	_gaq.push(['_trackEvent', 'Camera app', 'Take photo', 'Gone through the snapshot function']);
 	return false;//use preventdefault
 }
 
@@ -43,13 +44,16 @@ function redo(){
 	btnRedo.style.display = 'none';
 	canvasElement.style.display = 'none';
 	videoElement.style.display = 'block';
+	_gaq.push(['_trackEvent', 'Camera app', 'Retake photo', 'Gone through the redo function']);
 	return false;//use preventdefault
 }
 
 if (typeof MediaStreamTrack === 'undefined'){
 	alert('This browser does not support MediaStreamTrack.\n\nTry Chrome Canary.');
+	_gaq.push(['_trackEvent', 'Messages', 'Error', 'No support for MediaStreamTrack']);
 } else {
 	MediaStreamTrack.getSources(gotSources);
+	_gaq.push(['_trackEvent', 'Messages', 'Success', 'Has support for MediaStreamTrack']);
 }
 
 function gotSources(sourceInfos) {
@@ -65,6 +69,7 @@ function gotSources(sourceInfos) {
 
 		}
 	}
+	_gaq.push(['_trackEvent', 'Camera app', 'Sources', 'Gone through the gotSources function']);
 }
 function successCallback(stream) {
 	window.stream = stream;
@@ -75,9 +80,11 @@ function successCallback(stream) {
 		videoElement.width=window.innerWidth;
 		alert(window.innerHeight+' '+videoElement.videoHeight)
 	},1000)*/
+	_gaq.push(['_trackEvent', 'Camera app', 'Stream', 'Gone through the successCallback function']);
 }
 function errorCallback(error){
 	console.log("navigator.getUserMedia error: ", error);
+	_gaq.push(['_trackEvent', 'Camera app', 'Stream', 'Gone through the errorCallback function ('+error+')']);
 }
 function showCameraFeed(){
 	if (!!window.stream) {
@@ -91,15 +98,18 @@ function showCameraFeed(){
 	    }
 	  };
 	navigator.getUserMedia(constraints, successCallback, errorCallback);
+	_gaq.push(['_trackEvent', 'Camera app', 'Stream', 'Gone through the showCameraFeed function']);
 }
 showCameraFeed();
 
 //hide header
 setTimeout(function() {
 	zToggleClass(zQ('.js-header'),'hide');
+	_gaq.push(['_trackEvent', 'Camera app', 'UI', 'Hide header on load']);
 }, 2000)
 zBindEvent(zQ('.js-btn_showHeader'),"click",function(){
 	zToggleClass(zQ('.js-header'),'hide');
 	zToggleClass(zQ('.js-btn_showHeader'),'btn_hideHeader');
 	zToggleClass(zQ('.js-btn_showHeader'),'js-btn_hideHeader');
+	_gaq.push(['_trackEvent', 'Camera app', 'UI', 'Toggle header visibility']);
 })
